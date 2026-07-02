@@ -3,184 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TiendaGlobal - Inicio</title>
+    <meta name="description" content="CineVista es una landing page moderna para descubrir películas, reservar entradas y disfrutar experiencias cinematográficas premium.">
+    <title>CineVista | Tu próxima experiencia cinematográfica</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="top-bar d-none d-md-block">
-        <div class="container d-flex justify-content-between">
-            <div>🚀 Envíos rápidos y seguros a Mendoza y todo el país</div>
-            <div>
-                <a href="register.html">Crear cuenta</a>
-                <a href="login.html">Ingresar</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="search-bar-container sticky-top">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-6 col-md-3">
-                    <a href="index.html" class="text-white text-decoration-none fs-3 fw-bold">
-                        Tienda<span style="color: var(--accent-gold);">Global</span>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 mt-3 mt-md-0 order-3 order-md-2">
-                    <form class="d-flex">
-                        <div class="input-group search-pill">
-                            <select class="form-select border-end">
-                                <option>Todas</option>
-                                <option>Gaming</option>
-                            </select>
-                            <input class="form-control" type="search" placeholder="Buscar periféricos, hardware..." aria-label="Search">
-                            <button class="btn" style="background-color: var(--accent-gold); color: var(--primary-blue-dark);" type="button"><i class="fas fa-search fs-5"></i></button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-6 col-md-3 text-end order-2 order-md-3">
-                    <a href="cart.html" class="text-white text-decoration-none fs-4 position-relative">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
 
     <header class="hero-section">
-        <div class="container py-4">
-            <h1 class="display-4 mb-3">El Setup de tus Sueños, a un Clic</h1>
-            <p class="lead mb-4 text-white-50">Encuentra periféricos de alto rendimiento y hardware de importación.</p>
-            <a href="#productos" class="btn btn-primary btn-lg px-5 py-3">Ver Catálogo Premium</a>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-3" href="index.html">Cine<span>Vista</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="#cartelera">Cartelera</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#estrenos">Estrenos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-regular fa-user me-2"></i>Ingresar</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="cart.html" aria-label="Carrito de compras">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span class="cart-badge badge rounded-pill bg-danger" data-cart-count>0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container hero-content">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <span class="badge rounded-pill text-bg-light text-dark px-3 py-2 mb-3">Estrenos • Clásicos • Salas premium</span>
+                    <h1>Viví el cine como nunca antes.</h1>
+                    <p class="lead text-white-50 mb-4">Descubrí películas con valoraciones reales, directores destacados, actores reconocidos y reservas instantáneas para tu próxima función.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#cartelera" class="btn btn-cinema btn-lg px-4">Reservar entradas</a>
+                        <a href="#estrenos" class="btn btn-outline-light btn-lg px-4">Ver próximos estrenos</a>
+                    </div>
+                    <div class="row g-3 mt-4">
+                        <div class="col-sm-4">
+                            <div class="hero-stat">
+                                <strong>4K</strong>
+                                <span>Calidad de imagen</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="hero-stat">
+                                <strong>+120</strong>
+                                <span>Funciones semanales</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="hero-stat">
+                                <strong>4.9/5</strong>
+                                <span>Valoración de usuarios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-poster shadow">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80" alt="Sala de cine con pantalla">
+                        <div class="hero-poster-overlay">
+                            <p class="mb-1">Próxima función</p>
+                            <h3>Nightfall Echoes</h3>
+                            <span>20:30 • Sala VIP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container my-5" id="productos">
-        <div class="d-flex justify-content-between align-items-end mb-4">
-            <h2 class="fw-bold m-0" style="color: var(--primary-blue-dark);">Hardware & Periféricos</h2>
-            <a href="#" class="text-decoration-none fw-semibold" style="color: var(--accent-gold);">Ver todos <i class="fas fa-arrow-right ms-1"></i></a>
-        </div>
-        
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-            
-            <div class="col">
-                <div class="card product-card">
-                    <span class="badge bg-danger badge-floating rounded-pill shadow-sm">MÁS VENDIDO</span>
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1527814050087-379381547384?w=500&q=80" alt="Mousepad">
-                    </div>
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="text-muted small mb-1">MgMGamers Edition</p>
-                        <h5 class="card-title fs-6 fw-semibold mb-3">Mousepad Gamer Profesional XL (Deslizamiento Rápido)</h5>
-                        <div class="mt-auto">
-                            <p class="price-tag mb-0">$45.00</p>
-                            <a href="cart.html" class="btn btn-action w-100 mt-3 py-2">Agregar al carrito</a>
-                        </div>
-                    </div>
+    <main>
+        <section id="cartelera" class="container py-5">
+            <div class="section-header">
+                <div>
+                    <p class="section-kicker">Cartelera destacada</p>
+                    <h2>Películas que merecen tu próxima noche.</h2>
                 </div>
-            </div>
-            
-            <div class="col">
-                <div class="card product-card">
-                    <span class="badge bg-warning text-dark badge-floating rounded-pill shadow-sm">NUEVO</span>
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1615663245857-ac1eeb536624?w=500&q=80" alt="Mouse Wireless">
-                    </div>
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="text-muted small mb-1">Periféricos Competitivos</p>
-                        <h5 class="card-title fs-6 fw-semibold mb-3">Mouse Inalámbrico Ultraligero Pro 60g</h5>
-                        <div class="mt-auto">
-                            <p class="price-tag mb-0">$129.99</p>
-                            <a href="cart.html" class="btn btn-action w-100 mt-3 py-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="#contacto" class="text-decoration-none">Solicitar evento privado</a>
             </div>
 
-            <div class="col">
-                <div class="card product-card">
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1608285517172-88ceb626e2c3?w=500&q=80" alt="PTFE Glides">
-                    </div>
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="text-muted small mb-1">Accesorios</p>
-                        <h5 class="card-title fs-6 fw-semibold mb-3">Skates 100% PTFE Alta Velocidad (Set x2)</h5>
-                        <div class="mt-auto">
-                            <p class="price-tag mb-0">$15.50</p>
-                            <a href="cart.html" class="btn btn-outline-action w-100 mt-3 py-2">Agregar al carrito</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card product-card">
-                    <span class="badge bg-dark badge-floating rounded-pill shadow-sm">OFERTA</span>
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80" alt="Teclado">
-                    </div>
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="text-muted small mb-1">Hardware</p>
-                        <h5 class="card-title fs-6 fw-semibold mb-3">Teclado Mecánico Custom 60% Switches Rojos</h5>
-                        <div class="mt-auto">
-                            <div class="d-flex align-items-center gap-2 mb-0">
-                                <p class="price-tag mb-0">$89.00</p>
-                                <span class="text-muted text-decoration-line-through small">$110.00</span>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <article class="movie-card">
+                        <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=80" alt="Póster de Black Horizon">
+                        <div class="movie-card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-warning">⭐ 8.8</span>
+                                <span class="text-muted small">Thriller</span>
                             </div>
-                            <a href="cart.html" class="btn btn-outline-action w-100 mt-3 py-2">Agregar al carrito</a>
+                            <h3>Black Horizon</h3>
+                            <p>Un thriller psicológico con una tensión que crece en cada escena.</p>
+                            <div class="movie-meta">
+                                <span>Director: Elena Torres</span>
+                                <span>Actores: Mara Luján, Tomás Vega</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <strong>$14.500</strong>
+                                <button class="btn btn-cinema btn-sm add-to-cart" type="button" data-id="black-horizon" data-name="Black Horizon" data-price="14500" data-image="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=80">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <article class="movie-card">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Póster de Aurora City">
+                        <div class="movie-card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-warning">⭐ 9.1</span>
+                                <span class="text-muted small">Ciencia ficción</span>
+                            </div>
+                            <h3>Aurora City</h3>
+                            <p>Una historia épica sobre la búsqueda de un futuro imposible.</p>
+                            <div class="movie-meta">
+                                <span>Director: Nico Ruiz</span>
+                                <span>Actores: Sofía Mena, Luca Benítez</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <strong>$16.000</strong>
+                                <button class="btn btn-cinema btn-sm add-to-cart" type="button" data-id="aurora-city" data-name="Aurora City" data-price="16000" data-image="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <article class="movie-card">
+                        <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=80" alt="Póster de The Last Frame">
+                        <div class="movie-card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-warning">⭐ 8.4</span>
+                                <span class="text-muted small">Drama</span>
+                            </div>
+                            <h3>The Last Frame</h3>
+                            <p>Una mirada íntima sobre el arte, el recuerdo y la pérdida.</p>
+                            <div class="movie-meta">
+                                <span>Director: Valeria Cruz</span>
+                                <span>Actores: Tomás Del Río, Iara Sol</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <strong>$13.500</strong>
+                                <button class="btn btn-cinema btn-sm add-to-cart" type="button" data-id="last-frame" data-name="The Last Frame" data-price="13500" data-image="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=80">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <article class="movie-card">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Póster de Velvet Skyline">
+                        <div class="movie-card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge text-bg-warning">⭐ 8.9</span>
+                                <span class="text-muted small">Romance</span>
+                            </div>
+                            <h3>Velvet Skyline</h3>
+                            <p>Una historia romántica con una banda sonora impecable y escenas memorables.</p>
+                            <div class="movie-meta">
+                                <span>Director: Camila Varela</span>
+                                <span>Actores: Diego Arce, Abril Noro</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <strong>$12.800</strong>
+                                <button class="btn btn-cinema btn-sm add-to-cart" type="button" data-id="velvet-skyline" data-name="Velvet Skyline" data-price="12800" data-image="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia" class="py-5 section-dark">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <p class="section-kicker">Experiencia premium</p>
+                        <h2>Todo lo que necesitas para una noche inolvidable.</h2>
+                        <p class="text-white-50">Desde asientos reclinables hasta pantallas gigantes y sonido envolvente, cada detalle está pensado para que tu experiencia sea impecable.</p>
+                        <ul class="feature-list">
+                            <li><i class="fa-solid fa-check"></i> Salas con Dolby Atmos y proyección 4K</li>
+                            <li><i class="fa-solid fa-check"></i> Servicio de salón premium y snacks gourmet</li>
+                            <li><i class="fa-solid fa-check"></i> Reservas rápidas desde cualquier dispositivo</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="feature-card">
+                                    <i class="fa-solid fa-seat"></i>
+                                    <h3>Asientos VIP</h3>
+                                    <p>Comodidad real para disfrutar cada minuto.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-card">
+                                    <i class="fa-solid fa-wine-glass"></i>
+                                    <h3>Snack bar</h3>
+                                    <p>Combos gourmet y bebidas exclusivas.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-card">
+                                    <i class="fa-solid fa-film"></i>
+                                    <h3>Estrenos exclusivos</h3>
+                                    <p>Primeras funciones y presentaciones especiales.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-card">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <h3>Reserva móvil</h3>
+                                    <p>Compra y gestión desde tu celular en segundos.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </section>
 
-    <section class="bg-white py-5 border-top">
-        <div class="container py-4">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="text-center mb-5">
-                        <h3 class="fw-bold" style="color: var(--primary-blue-dark);">Soporte Técnico & Envíos</h3>
-                        <p class="text-muted">¿Consultas sobre compatibilidad o tiempos de envío? Escríbenos.</p>
+        <section id="estrenos" class="container py-5">
+            <div class="section-header">
+                <div>
+                    <p class="section-kicker">Próximos estrenos</p>
+                    <h2>Qué llegará muy pronto a nuestras salas.</h2>
+                </div>
+                <a href="#contacto" class="text-decoration-none">Hablar con el equipo</a>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="upcoming-card">
+                        <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=80" alt="Próximo estreno 1">
+                        <div class="p-4">
+                            <span class="badge text-bg-dark">18/08</span>
+                            <h3>Midnight Circuit</h3>
+                            <p>Una odisea urbana cargada de suspense y visuales futuristas.</p>
+                        </div>
                     </div>
-                    <form>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingName" placeholder="Juan Pérez" required>
-                            <label for="floatingName">Nombre completo</label>
+                </div>
+                <div class="col-md-4">
+                    <div class="upcoming-card">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Próximo estreno 2">
+                        <div class="p-4">
+                            <span class="badge text-bg-dark">25/08</span>
+                            <h3>Silver Waves</h3>
+                            <p>Una mirada poética sobre el tiempo, la memoria y el amor.</p>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                            <label for="floatingInput">Correo electrónico</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="upcoming-card">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Próximo estreno 3">
+                        <div class="p-4">
+                            <span class="badge text-bg-dark">01/09</span>
+                            <h3>Echoes of Summer</h3>
+                            <p>Un drama emotivo con un elenco brillante y una banda sonora única.</p>
                         </div>
-                        <div class="form-floating mb-4">
-                            <textarea class="form-control" placeholder="Escribe tu mensaje aquí" id="floatingTextarea" style="height: 120px" required></textarea>
-                            <label for="floatingTextarea">Tu mensaje</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="container py-5">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-5">
+                    <p class="section-kicker">Contacto</p>
+                    <h2>Tu próxima sesión empieza con una consulta.</h2>
+                    <p class="text-muted">Escribinos para reservas privadas, eventos o cualquier duda sobre funciones y promociones.</p>
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Av. San Martín 245, Mendoza</span>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 py-3 fs-6">ENVIAR CONSULTA</button>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+54 261 555 0123</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>hola@cinevista.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form id="contactForm" class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Correo</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Mensaje</label>
+                                <textarea class="form-control" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-cinema px-4">Enviar consulta</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Tienda<span style="color: var(--accent-gold);">Global</span></h5>
-                    <p class="text-white-50 text-sm">Tu setup competitivo armado desde casa.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="fw-bold">Cine<span>Vista</span></h3>
+                    <p class="text-white-50 mb-0">Una experiencia cinematográfica moderna, elegante y totalmente funcional.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Enlaces rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#cartelera">Cartelera</a></li>
+                        <li><a href="#experiencia">Experiencia</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Seguinos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
                 </div>
             </div>
-            <hr class="border-secondary mt-2">
-            <div class="text-center text-white-50 mt-3" style="font-size: 0.85rem;">
-                &copy; 2026 TiendaGlobal. Proyecto Universitario de Desarrollo de Software.
+            <div class="text-center mt-4 pt-4 border-top border-secondary small text-white-50">
+                © 2026 CineVista. Proyecto front-end profesional con Bootstrap y diseño responsive.
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

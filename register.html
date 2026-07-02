@@ -3,82 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - TiendaGlobal</title>
+    <title>Registro | CineVista</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light">
-
-    <nav class="navbar navbar-dark p-3 text-center d-flex justify-content-center">
-        <a href="index.html" class="navbar-brand fs-3 fw-bold m-0">
-            Tienda<span style="color: var(--accent-gold);">Global</span>
-        </a>
+<body class="auth-page">
+    <nav class="navbar navbar-dark p-3 justify-content-center">
+        <a href="index.html" class="navbar-brand fs-3 fw-bold m-0">Cine<span>Vista</span></a>
     </nav>
 
-    <div class="container pb-5">
-        <div class="auth-container mt-4">
-            <h3 class="auth-title">Regístrate</h3>
-            
-            <button class="google-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="20">
-                Ingresar con Google
-            </button>
-            
-            <div class="separator">o regístrate con tu email</div>
-            
-            <form action="index.html">
-                <div class="mb-3">
-                    <label class="form-label text-muted">Nombre/s <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">Apellido/s <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">Contraseña <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" required>
-                    <div class="form-text p-1 bg-light mt-1">Nivel seguridad de contraseña: Sin contraseña</div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-muted">Confirmar contraseña <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" required>
-                </div>
-                
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="ofertas">
-                    <label class="form-check-label text-muted" for="ofertas" style="font-size: 0.9rem;">
-                        Recibir ofertas de TiendaGlobal
-                    </label>
-                </div>
+    <div class="container py-5">
+        <div class="auth-container">
+            <h3 class="auth-title">Creá tu cuenta</h3>
+            <p class="text-center text-muted mb-4">Sumate para recibir lanzamientos, promociones y reservas anticipadas.</p>
 
-                <div class="d-flex justify-content-center mb-4">
-                    <div class="border p-2 rounded d-flex align-items-center justify-content-between" style="width: 100%; max-width: 300px; background: #f9f9f9;">
-                        <div class="form-check m-0">
-                            <input class="form-check-input" type="checkbox" id="robotCheckReg" required>
-                            <label class="form-check-label" for="robotCheckReg">No soy un robot</label>
-                        </div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/RecaptchaLogo.svg" alt="reCAPTCHA" width="30">
+            <button class="google-btn" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M21.6 12.23c0-.78-.07-1.53-.2-2.25H12v4.26h5.38a4.6 4.6 0 0 1-2 3.02v2.5h3.24c1.9-1.75 2.98-4.33 2.98-7.53Z"></path>
+                    <path fill="#34A853" d="M12 22c2.7 0 4.96-.9 6.62-2.43l-3.24-2.5c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.58A10 10 0 0 0 12 22Z"></path>
+                    <path fill="#FBBC05" d="M6.41 13.91A6.02 6.02 0 0 1 6.41 10.1V7.52H3.07a10 10 0 0 0 0 12.78l3.34-2.59Z"></path>
+                    <path fill="#EA4335" d="M12 6.04c1.47 0 2.79.5 3.83 1.49l2.87-2.87A9.95 9.95 0 0 0 12 2a10 10 0 0 0-8.93 5.52l3.34 2.59C7.2 7.8 9.4 6.04 12 6.04Z"></path>
+                </svg>
+                <span>Registrarte con Google</span>
+            </button>
+
+            <div class="separator"><span>o completá tus datos</span></div>
+
+            <form action="index.html">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label text-muted">Nombre</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label text-muted">Apellido</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label text-muted">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label text-muted">Contraseña</label>
+                        <input type="password" class="form-control" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label text-muted">Confirmar contraseña</label>
+                        <input type="password" class="form-control" required>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-action w-100 py-2 fs-5">Regístrate</button>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="checkbox" id="ofertas">
+                    <label class="form-check-label text-muted" for="ofertas">Quiero recibir novedades de CineVista</label>
+                </div>
+
+                <button type="submit" class="btn btn-cinema w-100 mt-4 py-2">REGISTRARME</button>
             </form>
-            
+
             <div class="text-center mt-4">
-                <p class="text-muted mb-2">¿Ya tienes una cuenta?</p>
-                <a href="login.html" class="btn btn-outline-action w-100 py-2">Ingresar</a>
+                <p class="text-muted mb-2">¿Ya tenés una cuenta?</p>
+                <a href="login.html" class="btn btn-outline-light w-100 py-2">INGRESAR</a>
             </div>
-            
-            <p class="text-center mt-3 text-muted" style="font-size: 0.8rem;">
-                Al registrarte estás aceptando nuestros <a href="#" style="color: #0d6efd; text-decoration: none;">Términos y Condiciones</a>
-            </p>
         </div>
     </div>
-
 </body>
 </html>
